@@ -1,15 +1,15 @@
 package com.jeet.demo.dto;
 
-public class EmployeeDto {
+public class OrderDto {
     private Integer id;
     private String fName;
 
-    public EmployeeDto(Integer id, String fName) {
+    public OrderDto(Integer id, String fName) {
         this.id = id;
         this.fName = fName;
     }
 
-    public EmployeeDto() {
+    public OrderDto() {
     }
 
     public Integer getId() {
