@@ -11,4 +11,5 @@ public interface OrderService {
     public List<PurchaseOrder> getOrder() ;
     public Optional<PurchaseOrder> getOrderDetails(int id);
     public List<OrderDto> getOrderList();
+    public Boolean updateOrder(String status,Integer id);
 }

@@ -6,7 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class User {
+public class Users {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
@@ -15,10 +15,10 @@ public class User {
     private String firstName;
     private String lastName;
 
-    public User() {
+    public Users() {
     }
 
-    public User(Integer id, String username, String password, String firstName, String lastName) {
+    public Users(Integer id, String username, String password, String firstName, String lastName) {
         this.id = id;
         this.username = username;
         this.password = password;
