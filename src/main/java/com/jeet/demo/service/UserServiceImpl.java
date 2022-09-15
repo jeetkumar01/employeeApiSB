@@ -21,10 +21,13 @@ public class UserServiceImpl implements UserService{
         return "Successfully added.";
     };
     public Boolean authenticateUser(UserLoginDto userLoginDto){
-        Users users =userRepository.findUser(userLoginDto.getUsername());
+        try{
+        Users users =userRepository.findByUsername(userLoginDto.getUsername());
         String loggedPassword=PasswordDecrypter.decryptPassword(users.getPassword());
         if(loggedPassword.equals(userLoginDto.getPassword())){
             return true;
+        }}catch(NullPointerException ex){
+            return false;
         }
         return false;
     };

@@ -9,6 +9,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface UserRepository extends JpaRepository<Users,Integer> {
 
-    @Query(value="FROM User user WHERE user.username = :username",nativeQuery = true)
-    Users findUser(@Param("username") String username);
+    Users findByUsername(String username);
 }
