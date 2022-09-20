@@ -1,6 +1,7 @@
 package com.jeet.demo.controller;
 
 import com.jeet.demo.dto.OrderDto;
+import com.jeet.demo.dto.OrderUpdateDto;
 import com.jeet.demo.entity.PurchaseOrder;
 import com.jeet.demo.exception.OrderNotFoundException;
 import com.jeet.demo.service.orderInterface.OrderService;
@@ -28,9 +29,9 @@ public class OrderController {
     return new ResponseEntity<>(result,HttpStatus.CREATED);
     }
 
-    @PutMapping("/order/{status}/{id}")
-    public ResponseEntity<?> updateOrder(@PathVariable String status,@PathVariable Integer id){
-        Boolean result = orderService.updateOrder(status,id);
+    @PutMapping("/order")
+    public ResponseEntity<?> updateOrder(@RequestBody OrderUpdateDto orderUpdateDto){
+        Boolean result = orderService.updateOrder(orderUpdateDto);
         if(result){
             return new ResponseEntity<>(HttpStatus.CREATED);
         }else{

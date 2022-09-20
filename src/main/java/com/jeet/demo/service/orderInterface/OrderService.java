@@ -1,6 +1,7 @@
 package com.jeet.demo.service.orderInterface;
 
 import com.jeet.demo.dto.OrderDto;
+import com.jeet.demo.dto.OrderUpdateDto;
 import com.jeet.demo.entity.PurchaseOrder;
 
 import java.util.List;
@@ -11,5 +12,5 @@ public interface OrderService {
     public List<PurchaseOrder> getOrder() ;
     public Optional<PurchaseOrder> getOrderDetails(int id);
     public List<OrderDto> getOrderList();
-    public Boolean updateOrder(String status,Integer id);
+    public Boolean updateOrder(OrderUpdateDto orderUpdateDto);
 }

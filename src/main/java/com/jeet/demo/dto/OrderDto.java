@@ -2,29 +2,29 @@ package com.jeet.demo.dto;
 
 public class OrderDto {
     private Integer id;
-    private String fName;
-
-    public OrderDto(Integer id, String fName) {
-        this.id = id;
-        this.fName = fName;
-    }
+    private String orderName;
 
     public OrderDto() {
     }
 
-    public Integer getId() {
-        return id;
-    }
-
-    public String getfName() {
-        return fName;
+    public OrderDto(Integer id, String orderName) {
+        this.id = id;
+        this.orderName = orderName;
     }
 
     public void setId(Integer id) {
         this.id = id;
     }
 
-    public void setfName(String fName) {
-        this.fName = fName;
+    public void setOrderName(String orderName) {
+        this.orderName = orderName;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public String getOrderName() {
+        return orderName;
     }
 }

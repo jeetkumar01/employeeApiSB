@@ -1,6 +1,7 @@
 package com.jeet.demo.service;
 
 import com.jeet.demo.dto.OrderDto;
+import com.jeet.demo.dto.OrderUpdateDto;
 import com.jeet.demo.entity.PurchaseOrder;
 import com.jeet.demo.repository.OrderRepository;
 import com.jeet.demo.service.orderInterface.OrderService;
@@ -43,9 +44,10 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public Boolean updateOrder(String status,Integer id){
+    public Boolean updateOrder(OrderUpdateDto orderUpdateDto){
         String deliveryDate=LocalDateTime.now().toString();
-        int recordsUpdatedCount=orderRepository.setStatusForOrder(status,id,deliveryDate);
+        String status="Delivered";
+        int recordsUpdatedCount=orderRepository.setStatusForOrder(status,orderUpdateDto.getId(),deliveryDate);
         if(recordsUpdatedCount==1){
             return true;
         }
