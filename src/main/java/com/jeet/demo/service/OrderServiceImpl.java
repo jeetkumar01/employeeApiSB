@@ -21,7 +21,7 @@ public class OrderServiceImpl implements OrderService {
     @Override
     public String addOrder(PurchaseOrder order) {
         order.setOrderDate(LocalDateTime.now().toString());
-        order.setStatus("pending");
+        order.setStatus("Pending");
         orderRepository.save(order);
         return "Order added successfully";
     }
